@@ -1,0 +1,30 @@
+body {
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  table {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #e2dede;
+  }
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  th:hover {
+    cursor: pointer;
+  }
+  .table-container {
+    max-width: 800px;
+    margin: 0 auto;
+    
+  }
