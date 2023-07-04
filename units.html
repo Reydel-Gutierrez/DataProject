@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building Units Maintenance</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>Building Units Maintenance</h2>
+    <form id="maintenanceForm">
+      <div class="form-group">
+        <label for="unitType">Select Unit Type:</label>
+        <select class="form-control" id="unitType" onchange="showTable()">
+          <option value="">-- Select Unit Type --</option>
+          <option value="acUnits">AC Units</option>
+          <option value="elevators">Elevators</option>
+          <option value="escalators">Escalators</option>
+        </select>
+      </div>
+    </form>
+    <div id="unitTable"></div>
+  </div>
+
+  <script>
+    function showTable() {
+      var unitType = document.getElementById("unitType").value;
+      var unitTable = document.getElementById("unitTable");
+      unitTable.innerHTML = "";
+
+      if (unitType === "acUnits") {
+        var table = document.createElement("table");
+        table.classList.add("table");
+
+        var thead = document.createElement("thead");
+        var headerRow = document.createElement("tr");
+
+        var unitHeader = document.createElement("th");
+        unitHeader.textContent = "Unit";
+        headerRow.appendChild(unitHeader);
+
+        var maintenanceHeader = document.createElement("th");
+        maintenanceHeader.textContent = "Last Maintenance";
+        headerRow.appendChild(maintenanceHeader);
+
+        var commentsHeader = document.createElement("th");
+        commentsHeader.textContent = "Comments";
+        headerRow.appendChild(commentsHeader);
+
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        var unitTableBody = document.createElement("tbody");
+        table.appendChild(unitTableBody);
+        unitTable.appendChild(table);
+
+        // AC Units table rows
+        createTableRow(unitTableBody, "Elevator- D-11", "AC Unit 1");
+        createTableRow(unitTableBody, "Elevator D-15816", "AC Unit 2");
+        createTableRow(unitTableBody, "Elevator D-12-13-14", "AC Unit 3");
+        createTableRow(unitTableBody, "Fire Alarm room", "AC Unit 4");
+        createTableRow(unitTableBody, "Telecom", "AC Unit 5");
+        createTableRow(unitTableBody, "Electrical Ground floor", "AC Unit 6");
+        createTableRow(unitTableBody, "VFD A-C Ground floor", "AC Unit 7");
+        createTableRow(unitTableBody, "Loading Dock office", "AC Unit 8");
+        createTableRow(unitTableBody, "Recycle room", "AC Unit 9");
+        createTableRow(unitTableBody, "Ground Floor Units 2 and OUTSIDE Air 1", "AC Unit 10");
+        createTableRow(unitTableBody, "Second Floor Units 2 and OUTSIDE Air 1", "AC Unit 11");
+        createTableRow(unitTableBody, "Second Floor location Under Rail 1 and 1", "AC Unit 12");
+        createTableRow(unitTableBody, "Elevador Landing D-11", "AC Unit 13");
+        createTableRow(unitTableBody, "E-Block 2 Split Unit", "AC Unit 14");
+        createTableRow(unitTableBody, "Track Unit Fan coil 4", "AC Unit 15");
+        createTableRow(unitTableBody, "SECOND FLOOR A-C UNIT PM BRIGHTLINE 1", "AC Unit 16");
+        createTableRow(unitTableBody, "FAN COIL UNIT Split Unit Roof 1 operations 24/7", "AC Unit 17");
+        createTableRow(unitTableBody, "Elevator D-47-48", "AC Unit 18");
+        createTableRow(unitTableBody, "Elevator D-49-1", "AC Unit 19");
+        createTableRow(unitTableBody, "Electrical room 2 unit Elevator D-46-45", "AC Unit 20");
+        createTableRow(unitTableBody, "IDF room 1", "AC Unit 21");
+        createTableRow(unitTableBody, "Telecom room Second floor", "AC Unit 22");
+        createTableRow(unitTableBody, "Telecom", "AC Unit 23");
+        createTableRow(unitTableBody, "Electrical room by PM Brightline", "AC Unit 24");
+        createTableRow(unitTableBody, "B-Block Ground and Second Floor Office Ground Floor 1", "AC Unit 25");
+        createTableRow(unitTableBody, "Telecom", "AC Unit 26");
+        createTableRow(unitTableBody, "Recycle Room", "AC Unit 27");
+        createTableRow(unitTableBody, "Elevator B-39", "AC Unit 28");
+        createTableRow(unitTableBody, "Fire alarm Room", "AC Unit 29");
+        createTableRow(unitTableBody, "Pump Room", "AC Unit 30");
+        createTableRow(unitTableBody, "Retail Hallway Ground Floor", "AC Unit 31");
+        createTableRow(unitTableBody, "Stair-8", "AC Unit 32");
+        createTableRow(unitTableBody, "Looby Ground Floor", "AC Unit 33");
+        createTableRow(unitTableBody, "Second Floor Hallway", "AC Unit 34");
+        createTableRow(unitTableBody, "Stair7", "AC Unit 35");
+        createTableRow(unitTableBody, "Loading dock office", "AC Unit 36");
+        createTableRow(unitTableBody, "Elevator room B-40 B-41", "AC Unit 37");
+        createTableRow(unitTableBody, "Electrical Room", "AC Unit 38");
+        createTableRow(unitTableBody, "Elevator landing", "AC Unit 39");
+        createTableRow(unitTableBody, "Telecom Room by valet parking", "AC Unit 40");
+        createTableRow(unitTableBody, "A-Block Ground Floor", "AC Unit 41");
+        createTableRow(unitTableBody, "Split unit", "AC Unit 42");
+        createTableRow(unitTableBody, "Electrical Room Main", "AC Unit 43");
+        createTableRow(unitTableBody, "Elevator 42", "AC Unit 44");
+        createTableRow(unitTableBody, "Split unit IDF", "AC Unit 45");
+        createTableRow(unitTableBody, "Telecom Room", "AC Unit 46");
+        createTableRow(unitTableBody, "Elevator A-43 A-44", "AC Unit 47");
+        createTableRow(unitTableBody, "Parking Garage office", "AC Unit 48");
+        createTableRow(unitTableBody, "Under Rail", "AC Unit 49");
+        createTableRow(unitTableBody, "Main Looby", "AC Unit 50");
+        createTableRow(unitTableBody, "IDF", "AC Unit 51");
+        createTableRow(unitTableBody, "Janitor Mezzanine", "AC Unit 52");
+        createTableRow(unitTableBody, "Elevator A-50", "AC Unit 53");
+        createTableRow(unitTableBody, "C-Block", "AC Unit 54");
+        createTableRow(unitTableBody, "Under Rail East side", "AC Unit 55");
+        createTableRow(unitTableBody, "Under Rail Center West", "AC Unit 56");
+        createTableRow(unitTableBody, "Mezzanine Level Hallway", "AC Unit 57");
+        createTableRow(unitTableBody, "Elevator C-27 & C-28", "AC Unit 58");
+        createTableRow(unitTableBody, "Elevator C-26", "AC Unit 59");
+        createTableRow(unitTableBody, "Elevator C-29", "AC Unit 60");
+        createTableRow(unitTableBody, "La Estacion", "AC Unit 61");
+        createTableRow(unitTableBody, "Recycle room", "AC Unit 62");
+        createTableRow(unitTableBody, "Telecom room", "AC Unit 63");
+        createTableRow(unitTableBody, "Fire Alarm", "AC Unit 64");
+        createTableRow(unitTableBody, "Hallway Ground floor", "AC Unit 65");
+        createTableRow(unitTableBody, "Loading Dock office", "AC Unit 66");
+        createTableRow(unitTableBody, "Mail Telecom room", "AC Unit 67");
+        createTableRow(unitTableBody, "Electrica Room", "AC Unit 68");
+        createTableRow(unitTableBody, "E-block-ElectricalRoom2", "AC Unit 69");
+
+        var submitButton = document.createElement("button");
+        submitButton.type = "button";
+        submitButton.classList.add("btn", "btn-primary");
+        submitButton.textContent = "Submit";
+        submitButton.addEventListener("click", submitForm);
+        unitTable.appendChild(submitButton);
+      } else {
+        unitTable.innerHTML = "";
+      }
+    }
+
+    function createTableRow(tableBody, unit, maintenance) {
+      var row = document.createElement("tr");
+
+      var unitCell = document.createElement("td");
+      unitCell.textContent = unit;
+      row.appendChild(unitCell);
+
+      var maintenanceCell = document.createElement("td");
+      var maintenanceInput = document.createElement("input");
+      maintenanceInput.type = "date";
+      maintenanceInput.classList.add("form-control");
+      maintenanceCell.appendChild(maintenanceInput);
+      row.appendChild(maintenanceCell);
+
+      var commentsCell = document.createElement("td");
+      var commentsInput = document.createElement("input");
+      commentsInput.type = "text";
+      commentsInput.classList.add("form-control");
+      commentsCell.appendChild(commentsInput);
+      row.appendChild(commentsCell);
+
+      tableBody.appendChild(row);
+    }
+
+    function submitForm() {
+      var form = document.getElementById("maintenanceForm");
+      form.reset();
+      alert("Maintenance records submitted successfully!");
+    }
+  </script>
+</body>
+
+</html>
